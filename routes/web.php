@@ -21,9 +21,13 @@ Route::get('/', function () {
 });
 
 Route::get('/sekolah-about', function () {
-    return view('about');
+    return view('about', [
+        'title' => 'about'
+    ]);
 });
 
 Route::get('/sekolah-blog', function () {
-    return view('blog');
+    return view('blog', [
+        'title' => 'blog'
+    ]);
 });
