@@ -29,4 +29,4 @@ Route::get('/sekolah-about', [AboutController::class, 'index']);
 Route::get('/sekolah-blog', [PostController::class, 'index']);
 
 // single post
-Route::get('sekolah-blog/{slug}', [PostController::class, 'singlePost']);
+Route::get('sekolah-blog/{post:slug}', [PostController::class, 'singlePost']);
