@@ -41,4 +41,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    // foreign key ke table
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
 }
