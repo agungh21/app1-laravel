@@ -2,8 +2,8 @@
 
 @section('container')
 <article class="mb-5">
-    <h2>{{ $post->title }}</h2></a>
-    <h5>By : {{ $post['author'] }}</h5>
+    <h1>{{ $post->title }}</h1></a>
+    <p>By : Agung in <a href="/categories/{{ $post->category->slug }}">{{ $post->category->name }}</a></p>
     {!! $post->body !!}
     <a href="/sekolah-blog">kembali</a>
 </article>

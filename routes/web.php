@@ -1,9 +1,11 @@
 <?php
 
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
 use App\Models\Post;
+use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 
 
@@ -30,3 +32,9 @@ Route::get('/sekolah-blog', [PostController::class, 'index']);
 
 // single post
 Route::get('sekolah-blog/{post:slug}', [PostController::class, 'singlePost']);
+
+// post by category
+Route::get('/categories/{category:slug}', [CategoryController::class, 'byCategory']);
+
+// halaman category
+Route::get('categories', [CategoryController::class, 'index']);
