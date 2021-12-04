@@ -38,3 +38,7 @@ Route::get('/categories/{category:slug}', [CategoryController::class, 'byCategor
 
 // halaman category
 Route::get('categories', [CategoryController::class, 'index']);
+
+// halaman autor post
+Route::get('/authors', [PostController::class, 'allAuthor']);
+Route::get('/authors/{author:username}', [PostController::class, 'singlePostByAuthor']);
