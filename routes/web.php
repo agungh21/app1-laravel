@@ -31,9 +31,7 @@ Route::get('/sekolah-blog', [PostController::class, 'index']);
 Route::get('sekolah-blog/{post:slug}', [PostController::class, 'singlePost']);
 
 // halaman category
-Route::get('/categories/{category:slug}', [PostController::class, 'byCategory']);
 Route::get('categories', [PostController::class, 'allCategory']);
 
 // halaman autor post
 Route::get('/authors', [PostController::class, 'allAuthor']);
-Route::get('/authors/{author:username}', [PostController::class, 'singlePostByAuthor']);

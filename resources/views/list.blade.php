@@ -17,9 +17,9 @@
                     <div class="card-img-overlay d-flex align-items-center p-0">
                       <h5 class="card-title text-center flex-fill bg-dark bg-opacity-50 p-4 fs-3">
                         @if ($title == 'All Category')
-                            <a href="/categories/{{ $p->slug }}" class="text-white">{{ $p->name }}</a>
+                            <a href="/sekolah-blog?category={{ $p->slug }}" class="text-white">{{ $p->name }}</a>
                         @else
-                            <a href="/authors/{{ $p->username }}" class="text-white">{{ $p->name }}</a>
+                            <a href="/sekolah-blog?author={{ $p->username }}" class="text-white">{{ $p->name }}</a>
                         @endif
                       </h5>
                     </div>

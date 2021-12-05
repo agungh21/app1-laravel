@@ -12,11 +12,23 @@ class PostController extends Controller
     // post semua data blog
     public function index()
     {
+
+        $title = '';
+
+        if (request('category')) {
+            $category = Category::firstWhere('slug', request('category'));
+            $title = ' in ' . $category->name;
+        }
+        if (request('author')) {
+            $author = User::firstWhere('username', request('author'));
+            $title = ' by ' . $author->name;
+        }
+
         return view('blog', [
-            'title' => 'All Post',
+            'title' => 'All Post' . $title,
             'subtitle' => 'All Post',
             // 'posts' => Post::all()
-            'posts' => Post::latest()->get()
+            'posts' =>  Post::latest()->filter(request(['search', 'category', 'author']))->get()
 
         ]);
     }
@@ -31,22 +43,12 @@ class PostController extends Controller
     }
 
     // post by category
-
     public function allCategory()
     {
         return view('list', [
             'title' => 'All Category',
             'subtitle' => 'All Category',
             'posts' => Category::all()
-        ]);
-    }
-
-    public function byCategory(Category $category)
-    {
-        return view('blog', [
-            'title' => "Post By Category : $category->name",
-            'subtitle' => 'All Category',
-            'posts' => $category->posts->load('category', 'author')
         ]);
     }
 
@@ -57,15 +59,6 @@ class PostController extends Controller
             'title' => 'All Author',
             'subtitle' => 'All Author',
             'posts' => User::all()
-        ]);
-    }
-
-    public function singlePostByAuthor(User $author)
-    {
-        return view('blog', [
-            'title' => "Post Author by : $author->name",
-            'subtitle' => 'All Author',
-            'posts' => $author->posts->load('category', 'author')
         ]);
     }
 }
