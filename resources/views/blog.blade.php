@@ -1,7 +1,7 @@
 @extends('templates.main')
 
 @section('container')
-    <h1>{{ $subtitle }}</h1>
+    <h1>{{ $title }}</h1>
 
     @foreach ($posts as $p)
         <article class="mb-5 border-bottom">

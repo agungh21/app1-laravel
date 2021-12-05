@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use App\Models\Category;
 use App\Models\User;
 
 class PostController extends Controller
@@ -12,8 +13,7 @@ class PostController extends Controller
     public function index()
     {
         return view('blog', [
-            'title' => 'blog',
-            'subtitle' => 'Post All Blog',
+            'title' => 'All Post',
             // 'posts' => Post::all()
             'posts' => Post::latest()->get()
 
@@ -24,13 +24,29 @@ class PostController extends Controller
     {
         return view('post', [
             'title' => 'blog',
-            'post' => $post
+            'posts' => $post
         ]);
     }
+
+    // post by category
+
+    public function allCategory()
+    {
+        return view('list', [
+            'title' => 'All Category',
+            'posts' => Category::all()
+        ]);
+    }
+
+    public function byCategory(Category $category)
+    {
+        return view('blog', [
+            'title' => "Post By Category : $category->name",
+            'posts' => $category->posts,
+        ]);
+    }
+
     // post by author
-
-
-
     public function allAuthor()
     {
         return view('list', [
@@ -42,8 +58,7 @@ class PostController extends Controller
     public function singlePostByAuthor(User $author)
     {
         return view('blog', [
-            'title' => 'Post Author',
-            'subtitle' => 'List Post by Author',
+            'title' => "Post Author by : $author->name",
             'posts' => $author->posts
         ]);
     }

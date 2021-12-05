@@ -27,17 +27,12 @@ Route::get('/', [HomeController::class, 'index']);
 Route::get('/sekolah-about', [AboutController::class, 'index']);
 
 // halaman blog
-// all post
 Route::get('/sekolah-blog', [PostController::class, 'index']);
-
-// single post
 Route::get('sekolah-blog/{post:slug}', [PostController::class, 'singlePost']);
 
-// post by category
-Route::get('/categories/{category:slug}', [CategoryController::class, 'byCategory']);
-
 // halaman category
-Route::get('categories', [CategoryController::class, 'index']);
+Route::get('/categories/{category:slug}', [PostController::class, 'byCategory']);
+Route::get('categories', [PostController::class, 'allCategory']);
 
 // halaman autor post
 Route::get('/authors', [PostController::class, 'allAuthor']);

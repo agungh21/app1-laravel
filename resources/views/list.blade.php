@@ -4,11 +4,11 @@
 
     <h1>List {{ $title }}</h1>
 
-    @if ($title == 'Category')
-        @foreach ($categories as $category)
+    @if ($title == 'All Category')
+        @foreach ($posts as $p)
         <ul>
             <li>
-                <h2><a href="/categories/{{ $category->slug }}">{{ $category->name }}</a></h2>
+                <h2><a href="/categories/{{ $p->slug }}">{{ $p->name }}</a></h2>
             </li>
         </ul>
         @endforeach
