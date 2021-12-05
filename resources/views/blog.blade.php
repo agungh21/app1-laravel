@@ -20,9 +20,6 @@
                 <a href="/sekolah-blog/{{ $posts[0]->slug }}" class="btn btn-primary">Read More</a>
             </div>
         </div>
-    @else
-        <p class="text-center fs-4">Post Not Found</p>
-    @endif
 
     <div class="container">
         <div class="row">
@@ -49,4 +46,8 @@
             @endforeach
         </div>
     </div>
+
+    @else
+        <p class="text-center fs-4">Post Not Found</p>
+    @endif
 @endsection
