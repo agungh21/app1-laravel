@@ -20,12 +20,17 @@ class DatabaseSeeder extends Seeder
         \App\Models\User::factory(5)->create();
 
         Category::create([
-            'name' => 'design',
+            'name' => 'Design',
             'slug' => 'design'
         ]);
 
         Category::create([
-            'name' => 'web',
+            'name' => 'Programmer',
+            'slug' => 'programmer'
+        ]);
+
+        Category::create([
+            'name' => 'Web',
             'slug' => 'web'
         ]);
 

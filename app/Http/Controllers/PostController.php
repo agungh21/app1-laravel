@@ -14,8 +14,9 @@ class PostController extends Controller
     {
         return view('blog', [
             'title' => 'All Post',
+            'subtitle' => 'All Post',
             // 'posts' => Post::all()
-            'posts' => Post::with(['author', 'category'])->latest()->get()
+            'posts' => Post::latest()->get()
 
         ]);
     }
@@ -24,6 +25,7 @@ class PostController extends Controller
     {
         return view('post', [
             'title' => 'blog',
+            'subtitle' => 'All Post',
             'posts' => $post
         ]);
     }
@@ -34,6 +36,7 @@ class PostController extends Controller
     {
         return view('list', [
             'title' => 'All Category',
+            'subtitle' => 'All Category',
             'posts' => Category::all()
         ]);
     }
@@ -42,6 +45,7 @@ class PostController extends Controller
     {
         return view('blog', [
             'title' => "Post By Category : $category->name",
+            'subtitle' => 'All Category',
             'posts' => $category->posts->load('category', 'author')
         ]);
     }
@@ -51,6 +55,7 @@ class PostController extends Controller
     {
         return view('list', [
             'title' => 'All Author',
+            'subtitle' => 'All Author',
             'posts' => User::all()
         ]);
     }
@@ -59,6 +64,7 @@ class PostController extends Controller
     {
         return view('blog', [
             'title' => "Post Author by : $author->name",
+            'subtitle' => 'All Author',
             'posts' => $author->posts->load('category', 'author')
         ]);
     }
