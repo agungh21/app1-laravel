@@ -42,7 +42,7 @@ class PostController extends Controller
     {
         return view('blog', [
             'title' => "Post By Category : $category->name",
-            'posts' => $category->posts,
+            'posts' => $category->posts->load('category', 'author')
         ]);
     }
 
@@ -59,7 +59,7 @@ class PostController extends Controller
     {
         return view('blog', [
             'title' => "Post Author by : $author->name",
-            'posts' => $author->posts
+            'posts' => $author->posts->load('category', 'author')
         ]);
     }
 }
