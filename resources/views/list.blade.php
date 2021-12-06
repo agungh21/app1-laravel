@@ -8,7 +8,7 @@
         <div class="row">
             @foreach ($posts as $p)
             <div class="col-md-4">
-                <div class="card bg-dark text-white ">
+                <div class="card bg-dark text-white mb-4">
                     @if ($title == 'All Category')
                         <img src="https://source.unsplash.com/500x400?{{ $p->name }}" class="card-img-top" alt="Category">
                     @else
