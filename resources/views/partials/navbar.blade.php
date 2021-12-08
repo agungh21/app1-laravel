@@ -23,6 +23,11 @@
             <a class="nav-link {{ ($subtitle === "All Author") ? 'active' : '' }}" href="/authors">Author</a>
           </li>
         </ul>
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+                <a href="/login" class="nav-link {{ ($subtitle === "Login") ? 'active' : '' }}"><i class="bi bi-box-arrow-in-right"></i> Login</a>
+            </li>
+        </ul>
       </div>
     </div>
   </nav>

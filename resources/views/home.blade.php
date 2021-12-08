@@ -1,4 +1,4 @@
-@extends('templates.main')
+@extends('layouts.main')
 
 @section('container')
     <h1>Hello {{ $nama }}, Welcome to my website</h1>

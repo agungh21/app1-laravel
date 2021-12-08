@@ -1,4 +1,4 @@
-@extends('templates.main')
+@extends('layouts.main')
 
 @section('container')
     <h1 class="mb-4 text-center">{{ $title }}</h1>
