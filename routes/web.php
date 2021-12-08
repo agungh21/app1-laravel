@@ -35,7 +35,8 @@ Route::get('categories', [PostController::class, 'allCategory']);
 Route::get('/authors', [PostController::class, 'allAuthor']);
 
 // halaman login
-Route::get('login', [LoginController::class, 'index']);
+Route::get('/login', [LoginController::class, 'index']);
 
 // halaman register
-Route::get('register', [RegisterController::class, 'index']);
+Route::get('/register', [RegisterController::class, 'index']);
+Route::post('/register', [RegisterController::class, 'store']);
