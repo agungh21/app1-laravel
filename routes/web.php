@@ -48,5 +48,8 @@ Route::post('/register', [RegisterController::class, 'store']);
 // halaman dashboard
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
 
+// membuat slug
+Route::get('/dashboard/posts/checkSlug', [DashboardPostController::class, 'checkSlug'])->middleware('auth');
+
 // halaman post
 Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth');
