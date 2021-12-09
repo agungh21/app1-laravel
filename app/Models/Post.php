@@ -44,4 +44,10 @@ class Post extends Model
             });
         });
     }
+
+    // Customizing The Key
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
 }

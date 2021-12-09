@@ -26,8 +26,6 @@ class PostController extends Controller
 
         return view('blog', [
             'title' => 'All Post' . $title,
-            'subtitle' => 'All Post',
-            // 'posts' => Post::all()
             'posts' =>  Post::latest()->filter(request(['search', 'category', 'author']))->paginate(7)->withQueryString()
 
         ]);
@@ -37,7 +35,6 @@ class PostController extends Controller
     {
         return view('post', [
             'title' => 'blog',
-            'subtitle' => 'All Post',
             'posts' => $post
         ]);
     }
@@ -47,7 +44,6 @@ class PostController extends Controller
     {
         return view('list', [
             'title' => 'All Category',
-            'subtitle' => 'All Category',
             'posts' => Category::all()
         ]);
     }
@@ -57,7 +53,6 @@ class PostController extends Controller
     {
         return view('list', [
             'title' => 'All Author',
-            'subtitle' => 'All Author',
             'posts' => User::all()
         ]);
     }

@@ -8,19 +8,19 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link {{ ($subtitle === "Home") ? 'active' : '' }}" href="/">Home</a>
+            <a class="nav-link {{ Request::is('/')?'active':'' }}" href="/">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link {{ ($subtitle === "About") ? 'active' : '' }}" href="/sekolah-about">About</a>
+            <a class="nav-link {{ Request::is('sekolah-about')?'active':'' }}" href="/sekolah-about">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link {{ ($subtitle === "All Post") ? 'active' : '' }}" href="/sekolah-blog">Blog</a>
+            <a class="nav-link {{ Request::is('sekolah-blog')?'active':'' }}" href="/sekolah-blog">Blog</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link {{ ($subtitle === "All Category") ? 'active' : '' }}" href="/categories">Category</a>
+            <a class="nav-link {{ Request::is('categories')?'active':'' }}" href="/categories">Category</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link {{ ($subtitle === "All Author") ? 'active' : '' }}" href="/authors">Author</a>
+            <a class="nav-link {{ Request::is('authors')?'active':'' }}" href="/authors">Author</a>
           </li>
         </ul>
 
@@ -41,7 +41,7 @@
                 </li>
             @else
                 <li class="nav-item">
-                    <a href="/login" class="nav-link {{ ($subtitle === "Login") ? 'active' : '' }}"><i class="bi bi-box-arrow-in-right"></i> Login</a>
+                    <a href="/login" class="nav-link {{ Request::is('login')?'active':'' }}"><i class="bi bi-box-arrow-in-right"></i> Login</a>
                 </li>
             @endauth
         </ul>
