@@ -14,7 +14,6 @@
             <article class="my-3 fs-4">
                 {!! $posts->body !!}
             </article>
-            <a href="/sekolah-blog">kembali</a>
         </article>
     </div>
 </div>
