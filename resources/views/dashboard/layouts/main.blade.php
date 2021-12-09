@@ -11,6 +11,17 @@
     <!-- Custom styles for this template -->
     <link href="{{ url('css/dashboard.css') }}" rel="stylesheet">
 
+    {{-- trix editor --}}
+    <link rel="stylesheet" type="text/css" href="/css/trix.css">
+    <script type="text/javascript" src="/js/trix.js"></script>
+
+    {{-- menghilangkan tombol input file --}}
+    <style>
+        trix-toolbar [data-trix-button-group="file-tools"]{
+            display: none;
+        }
+    </style>
+
     {{-- bootsraps icon --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
   </head>
