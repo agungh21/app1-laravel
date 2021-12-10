@@ -13,5 +13,18 @@
             My Posts
           </a>
         </li>
+    </ul>
+
+    <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+        <span>Administrator</span>
+    </h6>
+    <ul class="nav flex-column">
+        <li class="nav-item">
+            <a class="nav-link {{ Request::is('dashboard/categories*')?'active':'' }}" aria-current="page" href="/dashboard/categories">
+              <i class="bi bi-grid"></i>
+              Post Category
+            </a>
+          </li>
+    </ul>
     </div>
   </nav>
