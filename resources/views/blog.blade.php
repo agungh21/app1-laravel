@@ -25,7 +25,17 @@
 
     @if ($posts->count())
         <div class="card mb-3">
-            <img src="https://source.unsplash.com/1200x300?{{ $posts[0]->category->name }}" class="card-img-top" alt="Category">
+
+            @if ($posts[0]->image)
+                <div style="max-height: 350px; overflow:hidden;">
+                    <img src="{{ asset('storage/'.$posts[0]->image) }}" class="img-fluid" alt="Category">
+                </div>
+            @else
+                <img src="https://source.unsplash.com/1200x300?{{ $posts[0]->category->name }}" class="card-img-top" alt="Category">
+            @endif
+
+
+
             <div class="card-body">
                 <a href="/sekolah-blog/{{ $posts[0]->slug }}"><h5 class="card-title">{{ $posts[0]->title }}</h5></a>
                 <p>
@@ -49,7 +59,13 @@
                     <a href="/sekolah-blog?category={{ $p->category->slug }}">
                         <div class="position-absolute px-3 py-2 text-white bg-success">{{ $p->category->name }}</div>
                     </a>
+
+                    @if ($p->image)
+                        <img src="{{ asset('storage/'.$p->image) }}" class="img-fluid" alt="Category">
+                    @else
                     <img src="https://source.unsplash.com/500x400?{{ $p->category->name }}" class="card-img-top" alt="Category">
+                    @endif
+
                     <div class="card-body">
                       <h5 class="card-title"><a href="/sekolah-blog/{{ $p->slug }}">{{ $p->title }}</a></h5>
                       <p>
