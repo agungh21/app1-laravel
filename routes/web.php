@@ -51,6 +51,7 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('aut
 
 // membuat slug
 Route::get('/dashboard/posts/checkSlug', [DashboardPostController::class, 'checkSlug'])->middleware('auth');
+Route::get('/dashboard/categories/checkSlug', [AdminCategoryController::class, 'checkSlug'])->middleware('auth');
 
 // halaman post
 Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth');
