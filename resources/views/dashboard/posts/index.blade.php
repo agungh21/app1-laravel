@@ -11,7 +11,8 @@
       </div>
     @endif
 
-    <div class="table-responsive col-lg-10">
+    @if ($posts->count())
+        <div class="table-responsive col-lg-10">
         <a href="/dashboard/posts/create" class="btn btn-primary">Create New Post</a>
         <table class="table table-striped table-sm">
           <thead>
@@ -45,6 +46,9 @@
         </table>
       </div>
       <div class="d-flex justify-content-center">
-        {{ $posts->links() }}
-    </div>
+          {{ $posts->links() }}
+      </div>
+    @else
+        <p class="text-center fs-4">Post Not Found</p>
+    @endif
 @endsection
