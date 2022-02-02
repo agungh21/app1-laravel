@@ -1,27 +1,48 @@
 {{-- navbar --}}
-<nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
-    <div class="container">
+<nav class="navbar navbar-expand-lg navbar navbar-dark bg-success">
+    <div class="container-fluid">
       <a class="navbar-brand" href="/">SXN</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
+
+        <li class="nav-item">
+            <a class="nav-link {{ Request::is('/')?'active':'' }}" href="/"><i class="bi bi-house-fill"></i></a>
+        </li>
+
+
           <li class="nav-item">
-            <a class="nav-link {{ Request::is('/')?'active':'' }}" href="/">Home</a>
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link {{ Request::is('sekolah-about')?'active':'' }} dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Profile
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="/sekolah-about">About Campus</a></li>
+                    </ul>
+                </li>
+            </ul>
           </li>
+
           <li class="nav-item">
-            <a class="nav-link {{ Request::is('sekolah-about')?'active':'' }}" href="/sekolah-about">About</a>
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link {{ Request::is('authors')?'active':'' }} {{ Request::is('categories')?'active':'' }} {{ Request::is('sekolah-blog')?'active':'' }} dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Blog
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="/sekolah-blog">Post News</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="/categories">Category News</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="/authors">Author News</a></li>
+                    </ul>
+                </li>
+            </ul>
           </li>
-          <li class="nav-item">
-            <a class="nav-link {{ Request::is('sekolah-blog')?'active':'' }}" href="/sekolah-blog">Blog</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link {{ Request::is('categories')?'active':'' }}" href="/categories">Category</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link {{ Request::is('authors')?'active':'' }}" href="/authors">Author</a>
-          </li>
+
         </ul>
 
         <ul class="navbar-nav ms-auto">

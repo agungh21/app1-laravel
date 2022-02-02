@@ -18,16 +18,15 @@ class DashboardPostController extends Controller
      */
     public function index()
     {
-        // if (auth()->user()->is_admin === 1) {
-        //     return view('dashboard.posts.index', [
-        //         'posts' => Post::filter(request(['search']))->paginate(10)->withQueryString()
-        //     ]);
-        // } else
-        return view('dashboard.posts.index', [
-            // 'posts' => Post::where('user_id', auth()->user()->id)->filter(request(['search']))->paginate(10)->withQueryString()
-            'posts' => Post::where('user_id', auth()->user()->id)->get()
-        ]);
-        // }
+        if (auth()->user()->is_admin === 1) {
+            return view('dashboard.posts.index', [
+                'posts' => Post::filter(request(['search']))->paginate(10)->withQueryString()
+            ]);
+        } else {
+            return view('dashboard.posts.index', [
+                'posts' => Post::where('user_id', auth()->user()->id)->filter(request(['search']))->paginate(10)->withQueryString()
+            ]);
+        }
     }
 
     /**

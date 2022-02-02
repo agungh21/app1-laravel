@@ -11,6 +11,7 @@
       </div>
     @endif
 
+    @if ($categories->count())
     <div class="table-responsive col-lg-8">
         <a href="/dashboard/categories/create" class="btn btn-primary">Create New Category</a>
         <table class="table table-striped table-sm">
@@ -39,4 +40,11 @@
           </tbody>
         </table>
       </div>
+      <div class="d-flex justify-content-center">
+        {{ $categories->links() }}
+    </div>
+  @else
+    <a href="/dashboard/posts/create" class="btn btn-primary">Create New Post</a>
+    <p class="text-center fs-4">Post Not Found</p>
+  @endif
 @endsection

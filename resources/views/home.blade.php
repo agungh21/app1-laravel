@@ -1,5 +1,10 @@
 @extends('layouts.main')
 
+@section('style')
+{{-- home style --}}
+<link rel="stylesheet" href="{{ url('css/home-style.css') }}" />
+@endsection
+
 @section('container')
 <section class="home">
     <div class="gradient-overlay opacity">

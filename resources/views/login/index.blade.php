@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('container')
-<div class="row justify-content-center">
+<div class="row justify-content-center mt-4">
     <div class="col-lg-4">
 
         @if (session()->has('success'))

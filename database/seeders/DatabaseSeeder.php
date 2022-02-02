@@ -18,29 +18,30 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         User::create([
-            'name' => 'agung',
-            'username' => 'agung',
-            'email' => 'agung@gmail.com',
-            'password' => bcrypt('12345')
+            'name' => 'admin',
+            'username' => 'admin',
+            'email' => 'admin@gmail.com',
+            'password' => bcrypt('passWORD'),
+            'is_admin' => 1
         ]);
 
-        \App\Models\User::factory(5)->create();
+        // \App\Models\User::factory(5)->create();
 
         Category::create([
-            'name' => 'Design',
-            'slug' => 'design'
+            'name' => 'News',
+            'slug' => 'news'
         ]);
 
-        Category::create([
-            'name' => 'Programmer',
-            'slug' => 'programmer'
-        ]);
+        // Category::create([
+        //     'name' => 'Programmer',
+        //     'slug' => 'programmer'
+        // ]);
 
-        Category::create([
-            'name' => 'Web',
-            'slug' => 'web'
-        ]);
+        // Category::create([
+        //     'name' => 'Web',
+        //     'slug' => 'web'
+        // ]);
 
-        Post::factory(20)->create();
+        // Post::factory(20)->create();
     }
 }

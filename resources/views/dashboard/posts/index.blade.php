@@ -19,6 +19,7 @@
             <tr>
               <th scope="col">#</th>
               <th scope="col">Title</th>
+              <th scope="col">Category</th>
               <th scope="col">Author</th>
               <th scope="col">Action</th>
             </tr>
@@ -28,6 +29,7 @@
               <tr>
                 <td>{{ $loop->iteration }}</td>
                 <td>{{ $post->title }}</td>
+                <td>{{ $post->category->name }}</td>
                 <td>{{ $post->author->name }}</td>
                 <td>
                     <a href="/dashboard/posts/{{ $post->slug }}" class="badge bg-info"><i class="bi bi-eye"></i></a>
@@ -44,7 +46,7 @@
         </table>
         </div>
         <div class="d-flex justify-content-center">
-            {{-- {{ $posts->links() }} --}}
+            {{ $posts->links() }}
         </div>
       @else
         <a href="/dashboard/posts/create" class="btn btn-primary">Create New Post</a>
