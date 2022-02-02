@@ -1,6 +1,7 @@
 @extends('layouts.main')
 
 @section('container')
+<div class="container">
     <h1 class="mb-4 text-center">{{ $title }}</h1>
 
     <div class="row justify-content-center">
@@ -63,7 +64,7 @@
                     @if ($p->image)
                         <img src="{{ asset('storage/'.$p->image) }}" class="img-fluid" alt="Category">
                     @else
-                    <img src="https://source.unsplash.com/500x400?{{ $p->category->name }}" class="card-img-top" alt="Category">
+                        <img src="https://source.unsplash.com/500x400?{{ $p->category->name }}" class="card-img-top" alt="Category">
                     @endif
 
                     <div class="card-body">
@@ -89,5 +90,5 @@
     <div class="d-flex justify-content-center">
         {{ $posts->links() }}
     </div>
-
+</div>
 @endsection

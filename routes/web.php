@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\AdminAuthorController;
 use App\Http\Controllers\AdminCategoryController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
@@ -58,3 +59,6 @@ Route::resource('/dashboard/posts', DashboardPostController::class)->middleware(
 
 // halaman category
 Route::resource('/dashboard/categories', AdminCategoryController::class)->except('show')->middleware('admin');
+
+// halaman author
+// Route::resource('/dashboard/authors', AdminAuthorController::class)->except('show')->middleware('admin');

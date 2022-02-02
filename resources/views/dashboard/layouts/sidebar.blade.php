@@ -23,9 +23,15 @@
         <li class="nav-item">
             <a class="nav-link {{ Request::is('dashboard/categories*')?'active':'' }}" aria-current="page" href="/dashboard/categories">
               <i class="bi bi-grid"></i>
-              Post Category
+              Category
             </a>
           </li>
+        {{-- <li class="nav-item">
+            <a class="nav-link {{ Request::is('dashboard/authors*')?'active':'' }}" aria-current="page" href="/dashboard/authors">
+                <i class="bi bi-people"></i>
+              Author
+            </a>
+          </li> --}}
     </ul>
     @endcan
 

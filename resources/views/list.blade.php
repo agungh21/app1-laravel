@@ -2,7 +2,7 @@
 
 @section('container')
 
-    <h1>List {{ $title }}</h1>
+    <h1 style="text-align: center;">List {{ $title }}</h1>
 
     <div class="container">
         <div class="row">
