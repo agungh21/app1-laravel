@@ -27,10 +27,10 @@
           </li>
 
           <li class="nav-item">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item dropdown">
+              <ul class="navbar-nav ms-auto">
+                  <li class="nav-item dropdown">
                     <a class="nav-link {{ Request::is('authors')?'active':'' }} {{ Request::is('categories')?'active':'' }} {{ Request::is('sekolah-blog')?'active':'' }} dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Blog
+                        Blog
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="/sekolah-blog">Post News</a></li>
@@ -41,12 +41,25 @@
                     </ul>
                 </li>
             </ul>
-          </li>
+        </li>
 
-        </ul>
+    </ul>
 
-        <ul class="navbar-nav ms-auto">
-            @auth
+    <ul class="navbar-nav ms-auto">
+
+        <li class="nav-item">
+            <a href="https://akademik.sttcirebon.ac.id/" class="nav-link">SIAK</a>
+        </li>
+        <li class="nav-item">
+            <a href="http://digilib.sttcirebon.ac.id/" class="nav-link">DIGILIB</a>
+        </li>
+        <li class="nav-item">
+            <a href="https://ejournal.sttcirebon.ac.id/" class="nav-link">E-JOURNAL</a>
+        </li>
+        <li class="nav-item">
+            <a href="http://wais.sttcirebon.ac.id/" class="nav-link">WAIS</a>
+        </li>
+        @auth
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Welcome back, {{ auth()->user()->name }}
