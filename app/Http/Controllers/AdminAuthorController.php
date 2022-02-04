@@ -12,7 +12,7 @@ class AdminAuthorController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($id)
+    public function index()
     {
         return view('dashboard.authors.index', [
             'authors' => User::filter(request(['search']))->paginate(10)->withQueryString()
@@ -57,10 +57,10 @@ class AdminAuthorController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $user)
+    public function edit($id)
     {
         return view('dashboard.authors.edit', [
-            'authors' => $user
+            'authors' => User::find($id)
         ]);
     }
 
@@ -71,9 +71,17 @@ class AdminAuthorController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request, $id)
     {
-        //
+
+        $validatedData = $request->validate([
+            'name' => 'required|max:255',
+        ]);
+
+        User::where('id', $id)
+            ->update($validatedData);
+
+        return redirect('/dashboard/authors')->with('success', 'Update Author has been successfully!');
     }
 
     /**
@@ -84,6 +92,8 @@ class AdminAuthorController extends Controller
      */
     public function destroy(User $user)
     {
-        //
+        User::destroy($user->id);
+
+        return redirect('/dashboard/authors')->with('success', 'Author has been Deleted!');
     }
 }

@@ -30,11 +30,11 @@
                 <td>{{ $author->is_admin }}</td>
                 <td>
                     <a href="/dashboard/authors/{{ $author->id }}/edit" class="badge bg-warning"><i class="bi bi-pencil-square"></i></a>
-                    <form action="/dashboard/authors/{{ $author->id }}" method="post" class="d-inline">
+                    {{-- <form action="/dashboard/authors/{{ $author->id }}" method="post" class="d-inline">
                         @method('delete')
                         @csrf
                         <button class="badge bg-danger border-0" onclick="return confirm('Are You Sure?')"><i class="bi bi-x-circle"></i></button>
-                    </form>
+                    </form> --}}
                 </td>
               </tr>
               @endforeach

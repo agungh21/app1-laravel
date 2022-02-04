@@ -61,4 +61,5 @@ Route::resource('/dashboard/posts', DashboardPostController::class)->middleware(
 Route::resource('/dashboard/categories', AdminCategoryController::class)->except('show')->middleware('admin');
 
 // halaman author
-// Route::resource('/dashboard/authors', AdminAuthorController::class)->except('show')->middleware('admin');
+Route::resource('/dashboard/authors', AdminAuthorController::class)->except('show')->middleware('admin');
+Route::get('/dashboard/authors/{id}/edit', 'AdminAuthorController@edit')->middleware('admin');

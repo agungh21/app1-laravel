@@ -26,12 +26,12 @@
               Category
             </a>
           </li>
-        {{-- <li class="nav-item">
+        <li class="nav-item">
             <a class="nav-link {{ Request::is('dashboard/authors*')?'active':'' }}" aria-current="page" href="/dashboard/authors">
                 <i class="bi bi-people"></i>
               Author
             </a>
-          </li> --}}
+          </li>
     </ul>
     @endcan
 
