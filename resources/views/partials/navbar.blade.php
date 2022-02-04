@@ -36,8 +36,8 @@
                         <li><a class="dropdown-item" href="/sekolah-blog">Post News</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="/categories">Category News</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="/authors">Author News</a></li>
+                        {{-- <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="/authors">Author News</a></li> --}}
                     </ul>
                 </li>
             </ul>
